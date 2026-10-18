@@ -1,12 +1,12 @@
 # Black Pill (STM32F411CEU6) pin console
 ROOT     := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
-EMB      := $(realpath $(ROOT)/..)
 
-CMSIS    := $(EMB)/cmsis-device-f4
-CMSIS_CORE := $(EMB)/STM32CubeF1/Drivers/CMSIS/Include
-HAL_DRV  := $(EMB)/stm32f4xx-hal-driver
-FREERTOS := $(ROOT)/Middlewares/FreeRTOS
-USB_LIB  := $(EMB)/stm32_mw_usb_device
+# All dependencies are git submodules: git submodule update --init
+CMSIS      := $(ROOT)/Drivers/cmsis-device-f4
+CMSIS_CORE := $(ROOT)/Drivers/cmsis-core/Include
+HAL_DRV    := $(ROOT)/Drivers/stm32f4xx-hal-driver
+FREERTOS   := $(ROOT)/Middlewares/FreeRTOS
+USB_LIB    := $(ROOT)/Middlewares/stm32_mw_usb_device
 
 CC       := arm-none-eabi-gcc
 OBJCOPY  := arm-none-eabi-objcopy

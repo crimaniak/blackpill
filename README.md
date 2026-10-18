@@ -45,14 +45,18 @@ onboard LED (active low) and `PA0` is the KEY button.
 
 ## Dependencies
 
-Except for FreeRTOS, these are sibling directories of this one, found through `EMB` in the `Makefile`:
+All libraries are git submodules (`git clone --recurse-submodules`, or
+`git submodule update --init` after a plain clone):
 
-- `cmsis-device-f4` (clone of STMicroelectronics/cmsis-device-f4)
-- `stm32f4xx-hal-driver` (clone of STMicroelectronics/stm32f4xx-hal-driver)
-- `STM32CubeF1/Drivers/CMSIS/Include` for the CMSIS core headers
-- `stm32_mw_usb_device`
-- `Middlewares/FreeRTOS`: FreeRTOS-Kernel V11.3.2, a git submodule (`git submodule update --init`)
-- `arm-none-eabi-gcc` and `st-flash`
+| Path | Upstream | Version |
+|---|---|---|
+| `Middlewares/FreeRTOS` | FreeRTOS/FreeRTOS-Kernel | V11.3.2 |
+| `Middlewares/stm32_mw_usb_device` | STMicroelectronics/stm32_mw_usb_device | v2.11.6 |
+| `Drivers/stm32f4xx-hal-driver` | STMicroelectronics/stm32f4xx-hal-driver | v1.8.5-12 (`1f6451c`) |
+| `Drivers/cmsis-device-f4` | STMicroelectronics/cmsis-device-f4 | v2.6.11-3 (`9192c7b`) |
+| `Drivers/cmsis-core` | STMicroelectronics/cmsis-core | v5.9.0_20250520 |
+
+You also need `arm-none-eabi-gcc` and `st-flash` (stlink tools).
 
 ## Build and flash
 
